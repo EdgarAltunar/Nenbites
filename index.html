@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nenbtesp1</title>
+    <link rel="stylesheet" href="stylec.css">
+    <link rel="stylesheet" href="jvanim.js">
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="menu-button">☰ Menú</button>
+            <div class="dropdown-content">
+                <a href="#">Página Principal</a>
+                <a href="#">Iniciar Sesión</a>
+                <a href="#">Mis Órdenes</a>
+                <a href="#">Catálogo</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+        <a href="#" class="logo">Nenbites</a>
+        <button class="menu-button">🛒 Carrito (0)</button>
+    </nav>
+    
+    <!-- Banner principal -->
+    <div class="banner">
+        <div class="banner-content">
+            <h1>Nenbites</h1> 
+            
+            <p>Bites for the soul</p>
+        </div>
+    </div>
+    
+    <!-- Sección de productos -->
+    <h2 class="productos-titulo">Nuestras Galletas</h2>
+    <!-- Producto 0-->
+    <div class="contenedor-productos">
+        <div class="producto temporada">
+            <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+            <div class="producto-info">
+                <h3>choco chpips</h3>
+                <p>Galleta con chispas de chocolate </p>
+                <div class="precio">$15</div>
+                <button class="boton-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="producto Cchocolate">
+            <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+            <div class="producto-info">
+                <h3>Black Star </h3>
+                <p>Deliciosa galleta de chocolate con chispas de chocolate blanco.</p>
+                <div class="precio">$15 </div>
+                <button class="boton-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+        
+        <!-- Producto 2 -->
+        <div class="producto Cvainilla">
+            <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+            <div class="producto-info">
+                <h3>Golden dream</h3>
+                <p>Suave galleta de vainilla y Delicias chispas de chocolate blanco.</p>
+                <div class="precio">$15</div>
+                <button class="boton-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+        
+        <!-- Producto 3 -->
+        <div class="producto Chocobombon">
+            <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+            <div class="info">
+                <h3>mallow Melt</h3>
+                <p>Una Galleta de chocolate rellena de malvavisco con trozos de almendra y chips de chocolate.</p>
+                <div class="precio">$20</div>
+                <button class="boton-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+        <!--
+        <!-- Producto 4 -->
+        <div class="producto temporada">
+            <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+            <div class="producto-info">
+                <h3>choco chpips</h3>
+                <p>Galleta con chispas de chocolate </p>
+                <div class="precio">$15</div>
+                <button class="boton-comprar">Añadir al carrito</button>
+            </div>
+        </div>
+        
+<!-- 
+<div class="producto temporada 2">
+    <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+    <div class="producto-info">
+        <h3>Caramelo Salado</h3>
+        <p>Galleta cremosa con caramelo salado y base de mantequilla francesa.</p>
+        <div class="precio">$4.49 / 4 unidades</div>
+        <button class="boton-comprar">Añadir al carrito</button>
+    </div>
+</div>
+-->
+
+<!-- 
+    Producto 6 
+    Este bloque representa el producto "Almendra Tostada", una galleta con almendra y canela.
+-->
+<!--
+<div class="producto almendra">
+    <div class="producto-imagen" style="background-image: url('/api/placeholder/300/200')"></div>
+    <div class="producto-info">
+        <h3>Almendra Tostada</h3>
+        <p>Galleta con trozos de almendra tostada y un toque de canela.</p>
+        <div class="precio">$3.79 / 4 unidades</div>
+        <button class="boton-comprar">Añadir al carrito</button>
+    </div>
+</div>
+-->
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Nenbites</h3>
+                <p>Horneamos con ingredientes frescos y naturales para ofrecerte las mejores galletas artesanales.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>📞 9612753555</li>
+                    <li>✉️ pendente correo</li>
+                    <li>🏠 Tuxtla Guterrez Chiapas</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Nenbites. Todos los derechos reservados.</p>
+        </div>
+        
+    </footer>
+
+    <script>
+        // Función para registrar cuando el mouse pasa sobre un producto
+        function registrarEvento(producto) {
+            console.log(`Mouse sobre: ${producto.querySelector('h3').textContent}`);
+            // Aquí puedes agregar más funcionalidad si lo deseas
+        }
+
+        // Obtener todos los productos
+        const productos = document.querySelectorAll('.producto');
+        
+        // Agregar eventos a cada producto
+        productos.forEach(producto => {
+            producto.addEventListener('mouseenter', function() {
+                registrarEvento(producto);
+            });
+        });
+        
+        // Simulación de añadir al carrito
+        const botonesComprar = document.querySelectorAll('.boton-comprar');
+        let cantidadCarrito = 0;
+        const botonCarrito = document.querySelector('.navbar .menu-button:last-child');
+        
+        botonesComprar.forEach(boton => {
+            boton.addEventListener('click', function() {
+                cantidadCarrito++;
+                botonCarrito.textContent = `🛒 Carrito (${cantidadCarrito})`;
+                
+                // Nombre del producto
+                const nombreProducto = this.parentElement.querySelector('h3').textContent;
+                console.log(`Producto añadido al carrito: ${nombreProducto}`);
+                
+                // Efecto visual de confirmación
+                this.textContent = "¡Añadido!";
+                setTimeout(() => {
+                    this.textContent = "Añadir al carrito";
+                }, 1000);
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
