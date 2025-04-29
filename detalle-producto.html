@@ -3,49 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nenbites | Galletas Artesanales</title>
-    <meta name="description" content="Deliciosas galletas artesanales horneadas con ingredientes naturales">
+    <title>Detalle del Producto | Nenbites</title>
     <link rel="stylesheet" href="stylec.css">
-    <!-- Preconexión para mejorar rendimiento -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de navegación -->
     <nav class="navbar">
+        <!-- Copia el mismo navbar de index.html -->
         <div class="dropdown">
             <button class="menu-button">☰ Menú</button>
             <div class="dropdown-content">
                 <a href="index.html">Página Principal</a>
-                <a href="#">Iniciar Sesión</a>
-                <a href="#">Mis Órdenes</a>
-                <a href="#">Catálogo</a>
-                <a href="#">Contacto</a>
+                <!-- ... otros enlaces ... -->
             </div>
         </div>
         <a href="index.html" class="logo">Nenbites</a>
-        <button class="menu-button">🛒 Carrito (<span id="cart-count">0</span>)</button>
+        <button class="menu-button">🛒 Carrito (0)</button>
     </nav>
-    
-    <!-- Banner principal -->
-    <header class="banner">
-        <div class="banner-content">
-            <h1>Nenbites</h1>
-            <p>Bites for the soul</p>
-        </div>
-    </header>
 
-    <!-- Sección de productos -->
-    <main>
-        <h2 class="productos-titulo">Nuestras Galletas</h2>
-        <div class="contenedor-productos" id="productos-container">
-            <!-- Los productos se cargarán aquí dinámicamente desde product-handler.js -->
-        </div>
-    </main>
-    
-    <!-- Footer -->
+    <div class="detalle-producto" id="detalle-container">
+        <!-- Los datos se cargarán aquí con JavaScript -->
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -78,15 +56,40 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/product-handler.js"></script>
-    <script src="jvanim.js"></script>
-
-    <!-- Polyfill para navegadores antiguos (opcional) -->
     <script>
-        if (!window.Promise) {
-            document.write('<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.2.3/dist/polyfill.min.js"><\/script>');
-        }
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const detalleContainer = document.getElementById('detalle-container');
+
+            if (!productId) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Cargar datos del JSON
+            const response = await fetch('productos.json');
+            const data = await response.json();
+            const producto = data.productos.find(p => p.id == productId);
+
+            if (!producto) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            // Mostrar el producto
+            detalleContainer.innerHTML = `
+                <div class="imagen-producto">
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                </div>
+                <div class="info-producto">
+                    <h1>${producto.nombre}</h1>
+                    <p class="precio-detalle">${producto.precio}</p>
+                    <p class="descripcion-detalle">${producto.descripcion}</p>
+                    <button class="boton-comprar">Añadir al carrito</button>
+                </div>
+            `;
+        });
     </script>
 </body>
 </html>

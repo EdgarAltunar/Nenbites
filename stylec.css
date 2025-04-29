@@ -487,3 +487,49 @@
     transform: translateY(0);
     opacity: 1;
   }
+
+  /* Estilos para la página de detalle */
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  gap: 3rem;
+}
+
+.imagen-producto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagen-producto img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info-producto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.precio-detalle {
+  font-size: 1.8rem;
+  color: #c87941;
+  margin: 1.5rem 0;
+  font-weight: 700;
+}
+
+.descripcion-detalle {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #533a2e;
+}
+
+@media (max-width: 768px) {
+  .detalle-producto {
+      flex-direction: column;
+      gap: 2rem;
+  }
+}
